@@ -69,6 +69,135 @@ console.log(Array.isArray('Hello')); //Checks if something is in a array
 
 console.log(fruits.indexOf('oranges'));     //Checks the index of a value in an array
 
+//OBJECT LITERALS
+const person ={
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+    hobbies:['music','movies', 'sports'],
+    address: {                                 //Address is an Object within the Object person
+        street: '50 main st',
+        city: 'Boston',
+        state: 'MA'
+    }
+}
+
+console.log(person);                             //select the object person
+console.log(person.firstName, person.lastName);  //select specific properties of the person
+console.log(person.hobbies[1]);                  //selecting a specific value of an array
+
+const {firstName, lastName, address: {city}} = person;           //creating a variable --> you can destructure the object
+console.log(firstName);
+
+person.email = 'john@gmail.com'                  //You can add properties later on
+console.log(person);
+
+const todos = [                                  //This is an array of objects
+    {
+        id: 1,
+        text: 'Take out trash',
+        isCompleted: true
+    },
+    {
+        id: 2,
+        text: 'Meeting with boss',
+        isCompleted: true
+    },    
+    {
+        id: 3,
+        text: 'Dentist appointment',
+        isCompleted: false
+    }
+];
+
+console.log(todos);
+console.log(todos[1].text);                     //Here Im Selecting the Object in the Array with the index 1 and the property text
 
 
+//Converting my Objects to a JSON
+
+const todoJSON = JSON.stringify(todos);         //Since this is a JSON File now, you can proceed to send this JSON to a server
+console.log(todoJSON);  
+
+//LOOPS
+//For Loop
+for(let i = 0; i < 10; i++) {
+    console.log(`For Loop Number: ${i}`);
+}
+
+//While
+let i = 0;
+while(i < 10) {
+    console.log(`While Loop Number: ${i}`);
+    i++;
+}
+
+//Loop through Array
+for(let i = 0; i < todos.length; i++) {
+    console.log(todos[i].text);
+}
+
+
+for (let todo of todos) {            //FOROF is the same as ITER in JAVA
+    console.log(todo.text);
+}
+
+//High order Array methods
+//forEach
+todos.forEach(function(todo){
+    console.log(todo.text);
+});
+
+//map
+const todoText = todos.map(function(todo){      //Gives you an array of values back
+    return todo.text;
+});
+console.log(todoText);
+
+//filter
+const todoCompleted = todos.map(function(todo){      
+    return todo.isCompleted === true;
+}).map(function(todo){
+    return todo.text;
+})
+console.log(todoCompleted);
+
+const a = 4;
+
+if(a === 10){                   // Double Equals (==) matches the numbers regardles if one number is a String and other is an Integer. Triple Equals (===) matches the Datatypes.
+    console.log('x is 10');
+} else if (x > 10){
+    console.log('x is greater 10')
+} else {
+    console.log('x is NOT 10')
+}
+
+// Ternary Operator
+const c = 11;
+
+const color = c > 10 ? 'red' : 'blue';  //? means then and : means else
+console.log(color);
+
+// Switches
+switch (color) {
+    case 'red':
+        console.log('color is red');
+        break;
+    case 'blue':
+        console.log('color is blue');
+        break;
+    default:
+        console.log('color is NOT red or blue');   
+}
+
+//Functions
+function addNum(num1, num2){
+   return num1 + num2;
+}
+
+console.log(addNum(5,4));
+
+// Arrow functions
+const addNums = (num1, num2) => num1 + num2;
+console.log(addNums(10,10));
 
