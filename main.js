@@ -26,6 +26,7 @@ let z;                  //also undefinded
 
 console.log(typeof z);  //typeof -> shows the type of the variable
 
+//STRINGS
 //Concatenation
 console.log('My name is ' + name + ' and I am ' + age); //Old way of doing it
 
@@ -42,6 +43,32 @@ console.log(s.split(''));                       //Separates the String into Arra
 
 //UseCase for using split method in a String
 const t = 'technology, computers, it, code';
-console.log(t.split(', '));                     //In this case the separator is the comma and space after it. 
+console.log(t.split(', '));                               //In this case the separator is the comma and space after it. 
+
+
+//ARRAYS
+const numbers = new Array(1,2,3,4,5);                     //Normal Array constructor
+console.log(numbers);
+
+const fruits = ['apples', 'Oranges', 'Pears', 1, true]    //no need to make a constructor -> easier
+console.log(fruits);
+console.log(fruits[1]);     //Arrays are Zero based, same as in JAVA
+
+fruits[3] = 'grapes';       //You can add values to a CONST, but not change them
+console.log(fruits);
+
+fruits.push('mangos');      //This is an easier way to add new values in the array, if you dont know the last index of the array
+console.log(fruits);
+fruits.pop();               //Removes the last value
+console.log(fruits)
+
+fruits.unshift('strawberries'); //Adds value in the beginning of the array
+console.log(fruits);
+
+console.log(Array.isArray('Hello')); //Checks if something is in a array
+
+console.log(fruits.indexOf('oranges'));     //Checks the index of a value in an array
+
+
 
 
