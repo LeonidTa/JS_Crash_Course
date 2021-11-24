@@ -201,3 +201,63 @@ console.log(addNum(5,4));
 const addNums = (num1, num2) => num1 + num2;
 console.log(addNums(10,10));
 
+//THIS keyword -> same as in JAVA
+//Constructor
+function Person(firstName, lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);               //Here you can assign a real Date for the object
+    this.getBirthYear = function(){         //Here a function for the object was created
+        return this.dob.getFullYear();
+    }
+    this.getFullName = function(){          //This function returns the full name of the object
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+//Class
+class Person {
+    constructor() {
+        function Person(firstName, lastName, dob){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.dob = new Date(dob); 
+        }
+    }
+
+    getBirthYear(){
+        return this.dob.getFullYear();
+    }
+
+    getFullName(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+//Instantiate an Object
+const person1 = new Person('John', 'Doe', '4-3-1989');
+const person2 = new Person('Mary', 'Smith', '4-3-1945');
+console.log(person1);
+console.log(person2.dob.getFullYear());     //Here you can format the Date differently
+
+console.log(person1.getBirthYear());
+
+console.log(person2.getFullName());
+
+//Prototypes
+Person.prototype.getBirthYear = function(){
+    return this.dob.getFullYear();
+}
+
+Person.prototype.getFullName = function(){
+    return `${this.firstName} ${this.lastName}`;
+}
+
+console.log(person2.getFullName());
+console.log(person1);
+
+
+/*
+Prototypes, Classes, Objects do the same thing. Since Classes are used in other languages, you should use that
+*/
+
