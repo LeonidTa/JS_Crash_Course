@@ -259,5 +259,7 @@ console.log(person1);
 
 /*
 Prototypes, Classes, Objects do the same thing. Since Classes are used in other languages, you should use that
+Also called syntactic sugar :D
 */
+
 
